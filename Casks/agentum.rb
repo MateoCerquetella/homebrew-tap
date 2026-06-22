@@ -1,9 +1,9 @@
 cask "agentum" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.17.2"
-  sha256 arm:   "0690159943d6e930ca9def726a81dfb3d8f40bdae35303cc898b259c7dddb49c",
-         intel: "4217b551508b129f7c06d2d11d228334afc44d5387540af41994c2fc1e2f3988"
+  version "0.18.0"
+  sha256 arm:   "1a69cf21b676fd70a4e6602cb7f9eddc026c0738267a575609c20373827b2a84",
+         intel: "2ef0b619619c552cb2303eccbed94f55251db3b44e3fc604134c2ed3005294a2"
 
   url "https://github.com/MateoCerquetella/agentum/releases/download/v#{version}/agentum-#{version}-macos-#{arch}.dmg"
   name "Agentum"
@@ -12,16 +12,16 @@ cask "agentum" do
 
   depends_on macos: :big_sur
 
-  app "agentum.app"
+  app "Agentum.app"
 
   # Agentum is not yet Apple-notarized. Homebrew applies com.apple.quarantine to
   # downloads by default, which makes Gatekeeper block an unsigned app on first
   # launch. Strip it post-install so `brew install` is warning-free — the same
-  # approach nikitabobko/aerospace and mocki-toki/barik use. CI rewrites this file
-  # on each release; once releases are notarized, drop this postflight block.
+  # approach nikitabobko/aerospace and mocki-toki/barik use. Once releases are
+  # Apple-notarized, delete this postflight block.
   postflight do
     system_command "/usr/bin/xattr",
-                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/agentum.app"],
+                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/Agentum.app"],
                    must_succeed: false
   end
 
