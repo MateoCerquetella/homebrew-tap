@@ -1,9 +1,9 @@
 cask "agentum" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.92.3"
-  sha256 arm:   "c7e3611f810357f5f1eda0ccc4e2e7a085bcc6806485ad65df83897857d546c3",
-         intel: "f5e775c351207468dd7db4fd2cd2f42cbdd6a5aa7335700d257f30fa0f96b1af"
+  version "0.93.0"
+  sha256 arm:   "4c54612adb4cc81b26ccdc3c846052f94f55f7cdeded9a67d4135ae85b72ae07",
+         intel: "9bac981176add3ece6e17c917be7cdd25e8f4a4d4e0067e7fd314ac50b69eb40"
 
   url "https://github.com/MateoCerquetella/agentum/releases/download/v#{version}/agentum-#{version}-macos-#{arch}.dmg"
   name "Agentum"
